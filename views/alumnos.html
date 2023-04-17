@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include('partials/encabezado.html');%>
+
+<body onload="mostrarTodos()">
+    <div class="container">
+  
+        <table class="table table-hover" id="tabla">
+               <tr>
+                    <th>ID</th>
+                    <th>Matricula</th>
+                    <th>Nombre</th>
+                    <th>Domicilio</th>
+                    <th>Sexo</th>
+                    <th>Especialidad</th>
+               </tr>
+            </table>
+        </section>
+        <section>
+            <div>
+                <form>
+                    <div>
+                        <center>
+                            <br><br> 
+                            <button id="btnBuscar" onclick="buscar()"  class="btn btn-primary" style="margin-bottom: 5px;">Buscar</button>
+                            <input type="number" name="matricula" id="matricula" placeholder="Matricula" required="true" class="form-control" style="margin-left: 5px; width: 250px;">
+                            <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" style="margin-left: 5px; width: 250px;">
+                            <input type="text" name="domicilio" id="domicilio" placeholder="Domicilio" class="form-control" style="margin-left: 5px; width: 250px;">
+                            <select name="sexo" id="sexo" class="form-select" style="margin-left: 5px; width: 250px;">
+                                <option value="M">Masculino</option>
+                                <option value="F">Femenino</option>
+                            </select>
+                            <input type="text" name="especialidad" id="especialidad" placeholder="Especialidad"class="form-control" style="margin-left: 5px; width: 250px;">
+                        </center>
+                    </div>
+                    <br>
+                </form>
+            </div>
+            <div>
+                <center>
+                    <button id="btnAgregar" onclick="agregarAlumno()" class="btn btn-primary">Agregar</button>
+                    <button id="btnBorrar" onclick="eliminar()" class="btn btn-primary">Borrar</button>
+                    <button id="btnModificar" onclick="actualizar()" class="btn btn-primary">Modificar</button>
+                </center>
+            </div>
+        </section>
+    </div>
+    <%-include('partials/piePagina.html');%>
+   
+</body>
+</html>
+<style>
+    *{
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+}
+
+header{
+
+    background-color: aliceblue;
+    text-align: center;
+}
+
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+section{
+    flex: 50%;
+    background-color: rgb(245, 250, 254);
+    padding: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+footer{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 20px;
+    text-align: center;
+background-color: aquamarine;   
+}
+
+@media screen and (max-width: 700px){
+    nav, .row{
+        width: 50%;
+        flex-direction:column;
+    }
+}
+
+h2{
+    font-weight: bolder;
+    font-size: 35px;
+    text-align: center;
+
+}
+
+h3{
+    text-align: CENTER;
+    color: rgba(0, 0, 0, 0.723);
+    font-size: 15px;
+}
+</style>
